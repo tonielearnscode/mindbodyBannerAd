@@ -56,27 +56,6 @@ function handleComplete(evt,comp) {
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
 
-	function playAnimation() {
-	  if (exportRoot) {
-	    exportRoot.play();
-	    createjs.Ticker.paused = false;
-	  }
-	}
-	
-	function pauseAnimation() {
-	  if (exportRoot) {
-	    exportRoot.stop();
-	    createjs.Ticker.paused = true;
-	  }
-	}
-	
-	function replayAnimation() {
-	  if (exportRoot) {
-	    createjs.Ticker.paused = true;
-	    exportRoot.gotoAndPlay(0);
-	    createjs.Ticker.paused = false;
-	  }
-	}
 }
 </script>
 <!-- write your code here -->
@@ -86,12 +65,6 @@ function handleComplete(evt,comp) {
 		<canvas id="canvas" width="720" height="300" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
 		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:720px; height:300px; position: absolute; left: 0px; top: 0px; display: block;">
 		</div>
-	</div>
-
-	<div style="text-align: center; margin-top: 20px;">
- 		<button onclick="playAnimation()">Play</button>
-  		<button onclick="pauseAnimation()">Pause</button>
-  		<button onclick="replayAnimation()">Replay</button>
 	</div>
 </body>
 </html>
